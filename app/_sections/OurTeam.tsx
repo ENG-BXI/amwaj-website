@@ -1,9 +1,8 @@
-import React from 'react';
 import OurTeamImage from '@/public/Images/OurTeam.png';
 import Image from 'next/image';
 const OurTeam = () => {
   return (
-    <section className='section'>
+    <section className='section mb-30'>
       <h2 className='section__title text-[120px]! mb-20!'>فريق العمل OUR TEAM</h2>
       <div className='w-full h-100 bg-linear-to-l from-[#091616] vie-[#0F1F1F] to-[#204C4C]/50  flex justify-around items-center py-7 px-10 rounded-xl '>
         <div className='w-1/2'>
