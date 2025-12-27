@@ -129,6 +129,7 @@ body {
   /* color:rgba(255, 255, 255, 0.6) */
   color: white;
   font-size: 25px;
+  scroll-behavior: smooth;
 }
 
 section.section {
@@ -136,7 +137,7 @@ section.section {
 }
 
 section .section__title {
-  @apply my-5 text-[150px] text-center text-base/36 -tracking-[10px] font-bold bg-linear-to-r bg-clip-text text-transparent from-white/20 to-[#696969]/20
+  @apply my-5 text-[70px] md:text-[150px] text-center text-base/20 md:text-base/36 -tracking-[10px] font-bold bg-linear-to-r bg-clip-text text-transparent from-white/20 to-[#696969]/20
 }
 
 .our-values li::before {

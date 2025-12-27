@@ -2,9 +2,10 @@ import React from 'react';
 import Logo from '@/public/Images/Logo.png';
 import Image from 'next/image';
 const Footer = () => {
+  // TODO Have Problem Responsive
   return (
-    <footer className='px-20 pt-20 pb-10 border-y border-primary'>
-      <div className='flex justify-between mb-10'>
+    <footer className='md:px-20 pt-20 pb-10 border-y border-primary'>
+      <div className='flex flex-col md:flex-row justify-between mb-10'>
         <div className='w-80 h-25'>
           <Image className='w-full h-full' src={Logo} alt='Logo Image' />
         </div>

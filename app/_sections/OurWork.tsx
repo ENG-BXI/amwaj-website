@@ -21,7 +21,7 @@ const OurWork = () => {
     }
   ];
   return (
-    <section className='section'>
+    <section id='ourWork' className='section'>
       <h2 className='section__title mb-20!'>
         اعمالنا <br />
         OUT WORKS
@@ -45,13 +45,13 @@ interface IOurWorkData {
 
 function OurWorkData({data: {image, listOfData, title}}: {data: IOurWorkData}) {
   return (
-    <div className='min-w-full'>
-      <h3 className='text-5xl font-bold mb-6'>{title}</h3>
+    <div className='min-w-300'>
+      <h3 className='text-5xl font-bold mb-10'>{title}</h3>
       <div className=''>
         {/* First */}
         <div className='flex justify-between'>
           {/* Data */}
-          <ul className='our-values flex flex-col gap-y-2 '>
+          <ul className='our-values flex flex-col gap-y-2  '>
             {listOfData.map((e, i) => {
               return (
                 <li key={i} data-number={`0${i + 1}`} className='text-[22px]'>

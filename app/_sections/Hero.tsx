@@ -9,7 +9,7 @@ const Hero = () => {
         <Image src={heroImage} alt='heroImage' width={1000} height={1000} className='object-cover w-full h-full' />
       </div>
       <div className='flex w-full h-full items-center justify-center relative'>
-        <h1 className='text-white z-10 -translate-y-10 text-center text-7xl font-bold'>
+        <h1 className='text-white z-10 -translate-y-10 text-center text-5xl md:text-7xl font-bold'>
           امواج الدولية
           <br /> للتجارة والمقاولات المحدودة
         </h1>

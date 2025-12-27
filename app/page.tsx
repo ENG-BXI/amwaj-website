@@ -15,9 +15,10 @@ import OurProject from './_sections/OurProject';
 import OurTeam from './_sections/OurTeam';
 import OurWork from './_sections/OurWork';
 import WhoAreWe from './_sections/WhoAreWe';
+
 const page = () => {
   return (
-    <main className='bg-background relative 2xl:container 2xl:mx-auto '>
+    <main className='bg-background relative 2xl:container 2xl:mx-auto scroll-smooth '>
       <NavBar />
       <Hero />
       <WhoAreWe />

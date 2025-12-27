@@ -3,34 +3,34 @@ import heroImage from '@/public/images/HeroImage.png';
 
 const OurPhilosophy = () => {
   return (
-    <section id='philosophy' className='section flex flex-col gap-y-20 w-3/4!'>
+    <section id='ourPhilosophy' className='section flex flex-col gap-y-20 md:w-3/4!'>
       {/* رؤيتنا */}
-      <div className='flex gap-x-10'>
-        <div className='w-120 h-90 overflow-hidden rounded-4xl'>
+      <div className='flex flex-col md:flex-row gap-x-10'>
+        <div className='w-full md:max-w-120 h-90 overflow-hidden rounded-4xl'>
           <Image className='h-full w-full object-cover' src={heroImage} alt='Our View Image' />
         </div>
-        <div className='flex-1 flex flex-col'>
-          <h3 className='text-start! section__title text-[150px]! text-base/50!'>رؤيتنا</h3>
-          <p className='text-[18px]'>أن نكون من الشركات الرائدة في تقديم الحلول الهندسية المتكاملة في مجالات الطاقة والمشاريع الكهربائية، والمساهمة في تطوير البنية التحتية الحديثة بكفاءة واستدامة</p>
+        <div className='flex-1 flex flex-col '>
+          <h3 className='section__title text-[80px]! text-base/25! md:text-[150px]! md:text-base/50! md:text-start!'>رؤيتنا</h3>
+          <p className='text-[18px] text-center md:text-start'>أن نكون من الشركات الرائدة في تقديم الحلول الهندسية المتكاملة في مجالات الطاقة والمشاريع الكهربائية، والمساهمة في تطوير البنية التحتية الحديثة بكفاءة واستدامة</p>
         </div>
       </div>
       {/* رسالتنا */}
-      <div className='flex gap-x-10'>
-        <div className='flex-1 flex flex-col'>
-          <h3 className='text-start! section__title text-[150px]! text-base/50!'>رسالتنا</h3>
-          <p className='text-[18px]'>تقديم خدمات هندسية وفنية عالية الجودة في مجالات المحطات الكهربائية، عبر فريق متخصص يلتزم بأعلى معايير الجودة والسلامة والابتكار لتحقيق رضا العملاء والشركاء.</p>
+      <div className='flex flex-col md:flex-row gap-x-10'>
+        <div className='flex-1 flex flex-col order-2 md:order-1'>
+          <h3 className='section__title text-[80px]! text-base/25! md:text-[130px]! md:text-base/50! md:text-start!'>رسالتنا</h3>
+          <p className='text-[18px] text-center md:text-start'>تقديم خدمات هندسية وفنية عالية الجودة في مجالات المحطات الكهربائية، عبر فريق متخصص يلتزم بأعلى معايير الجودة والسلامة والابتكار لتحقيق رضا العملاء والشركاء.</p>
         </div>
-        <div className='w-120 h-90 overflow-hidden rounded-4xl'>
+        <div className='w-full md:max-w-120 h-90 overflow-hidden rounded-4xl order-1 md:order-2'>
           <Image className='h-full w-full object-cover' src={heroImage} alt='Our View Image' />
         </div>
       </div>
       {/* قيمنا */}
-      <div className='flex gap-x-10'>
-        <div className='w-120 h-90 overflow-hidden rounded-4xl'>
+      <div className='flex flex-col md:flex-row gap-x-10'>
+        <div className='w-full md:max-w-120 h-90 overflow-hidden rounded-4xl'>
           <Image className='h-full w-full object-cover' src={heroImage} alt='Our View Image' />
         </div>
         <div className='flex-1 flex flex-col'>
-          <h3 className='text-start! section__title text-[150px]! text-base/50!'>قيمنا</h3>
+          <h3 className='section__title text-[80px]! text-base/25! md:text-[150px]! md:text-base/50! md:text-start!'>قيمنا</h3>
           <ul className='our-values'>
             <li data-number='01' className='font-bold'>
               الجودة والتميز

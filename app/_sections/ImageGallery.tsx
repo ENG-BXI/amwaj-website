@@ -4,12 +4,12 @@ import OurTeamImage from '@/public/Images/OurTeam.png';
 const ImageGallery = () => {
   const listOfImage = [OurTeamImage, OurTeamImage, OurTeamImage, OurTeamImage, OurTeamImage, OurTeamImage, OurTeamImage, OurTeamImage];
   return (
-    <section className='section'>
-      <h2 className='section__title text-[120px]! text-base/30! mb-20!'>
+    <section id='imageGallery' className='section'>
+      <h2 className='section__title text-[80px]! text-base/20! md:text-[120px]! md:text-base/30! mb-20!'>
         معرض الصور <br />
         IMAGE GALLARY
       </h2>
-      <div className='grid justify-items-center grid-cols-4 gap-10 px-10'>
+      <div className='grid justify-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-10'>
         {listOfImage.map((e, i) => {
           return (
             <div key={i} className='h-120 overflow-hidden'>
