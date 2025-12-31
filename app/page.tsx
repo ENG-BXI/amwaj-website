@@ -1,4 +1,5 @@
 import NavBar from './_Components/NavBar';
+import ScrollLenis from './_Components/ScrollLenis';
 import ContactUs from './_sections/ContactUs';
 import CopyRight from './_sections/CopyRight';
 import Footer from './_sections/Footer';
@@ -19,23 +20,25 @@ import WhoAreWe from './_sections/WhoAreWe';
 const page = () => {
   return (
     <main className='bg-background relative 2xl:container 2xl:mx-auto scroll-smooth '>
-      <NavBar />
-      <Hero />
-      <WhoAreWe />
-      <OurPhilosophy />
-      <OurWork />
-      <OurExperience />
-      <OurTeam />
-      <OurCommitment />
-      <OurPartners />
-      <OurClients />
-      <OurProject />
-      <ImageGallery />
-      <OurLocation />
-      <ContactUs />
-      <FooterCompanyName />
-      <Footer />
-      <CopyRight />
+      <ScrollLenis>
+        <NavBar />
+        <Hero />
+        <WhoAreWe />
+        <OurPhilosophy />
+        <OurWork />
+        <OurExperience />
+        <OurTeam />
+        <OurCommitment />
+        <OurPartners />
+        <OurClients />
+        <OurProject />
+        <ImageGallery />
+        <OurLocation />
+        <ContactUs />
+        <FooterCompanyName />
+        <Footer />
+        <CopyRight />
+      </ScrollLenis>
     </main>
   );
 };
