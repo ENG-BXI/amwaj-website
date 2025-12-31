@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import heroImage from '@/public/images/HeroImage.png';
+import heroImage from '@/public/Images/HeroImage.png';
 
 const OurPhilosophy = () => {
   return (

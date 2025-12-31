@@ -125,11 +125,15 @@
   }
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 body {
   /* color:rgba(255, 255, 255, 0.6) */
   color: white;
   font-size: 25px;
-  scroll-behavior: smooth;
 }
 
 section.section {
