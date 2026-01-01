@@ -33,27 +33,27 @@ const OurWork = () => {
       const works = container.current!.querySelector('.works') as HTMLElement;
       const workswidth = works.scrollWidth;
       const amoutScroll = workswidth - window.innerWidth;
-      console.log(workswidth, amoutScroll, window.innerWidth);
 
       const headerWord = SplitText.create(container.current!.querySelector('h2'), {type: 'lines'});
       gsap.from(headerWord.lines, {
         scrollTrigger: {
           trigger: container.current!,
           start: '30% 90%',
-          end: 'bottom 20%'
+          end: 'bottom 20%',
+          markers: true
         },
         duration: 1.5,
-        markers: true,
         y: 50,
         opacity: 0,
         stagger: 0.1,
         ease: 'power3.out'
       });
+
       gsap.to(container.current!.querySelector('.works'), {
         scrollTrigger: {
           trigger: container.current!.querySelector('.works'),
           start: 'top 15%',
-          end: `+=${amoutScroll}`,
+          end: `+=${amoutScroll + 200}`,
           scrub: true,
           pin: true
         },

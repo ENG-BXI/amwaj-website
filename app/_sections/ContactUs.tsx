@@ -19,7 +19,6 @@ const ContactUs = () => {
       });
       tl.from(container.current!.querySelector('h2'), {
         duration: 1,
-        markers: true,
         y: 50,
         opacity: 0,
         stagger: 0.1,
@@ -30,7 +29,6 @@ const ContactUs = () => {
         container.current!.querySelector('p'),
         {
           duration: 1,
-          markers: true,
           y: 50,
           opacity: 0,
           stagger: 0.1,

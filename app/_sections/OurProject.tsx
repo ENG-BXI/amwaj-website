@@ -1,4 +1,3 @@
-
 'use client';
 import {useGSAP} from '@gsap/react';
 import gsap, {ScrollTrigger} from 'gsap/all';
@@ -14,10 +13,10 @@ const OurProject = () => {
         scrollTrigger: {
           trigger: container.current!,
           start: '30% 90%',
-          end: 'bottom 20%'
+          end: 'bottom 20%',
+          markers: true
         },
         duration: 1.5,
-        markers: true,
         y: 50,
         opacity: 0,
         stagger: 0.1,
