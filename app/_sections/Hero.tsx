@@ -11,10 +11,8 @@ const Hero = () => {
   const container = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      document.fonts.ready.then(() => {
-        const headerWord = SplitText.create(container.current!.querySelector('h1'), {type: 'lines'});
-        gsap.from(headerWord.lines, {duration: 0.6, y: 20, opacity: 0, stagger: {each: 0.1, ease: 'power4.out'}, delay: 1.2});
-      });
+      const headerWord = SplitText.create(container.current!.querySelector('h1'), {type: 'lines'});
+      gsap.from(headerWord.lines, {duration: 0.6, y: 20, opacity: 0, stagger: {each: 0.1, ease: 'power4.out'}, delay: 1.2});
     },
     {scope: container}
   );

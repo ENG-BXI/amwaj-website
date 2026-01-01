@@ -38,9 +38,8 @@ const OurWork = () => {
       gsap.from(headerWord.lines, {
         scrollTrigger: {
           trigger: container.current!,
-          start: '30% 90%',
-          end: 'bottom 20%',
-          markers: true
+          start: 'top 70%',
+          end: 'bottom 20%'
         },
         duration: 1.5,
         y: 50,

@@ -15,8 +15,7 @@ const OurPhilosophy = () => {
         scrollTrigger: {
           trigger: container.current!.querySelector('#view'),
           start: 'top 60%',
-          end: 'bottom 20%',
-          markers: true
+          end: 'bottom 20%'
         },
         duration: 1.5,
         y: 50,
@@ -28,8 +27,7 @@ const OurPhilosophy = () => {
         scrollTrigger: {
           trigger: container.current!.querySelector('#message'),
           start: 'top 60%',
-          end: 'bottom 20%',
-          markers: true
+          end: 'bottom 20%'
         },
         duration: 1.5,
         y: 50,
@@ -41,8 +39,7 @@ const OurPhilosophy = () => {
         scrollTrigger: {
           trigger: container.current!.querySelector('#values'),
           start: 'top 60%',
-          end: 'bottom 20%',
-          markers: true
+          end: 'bottom 20%'
         },
         duration: 1.5,
         y: 50,

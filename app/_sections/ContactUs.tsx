@@ -13,7 +13,7 @@ const ContactUs = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container.current!,
-          start: '30% 90%',
+          start: 'top 70%',
           end: 'bottom 20%'
         }
       });

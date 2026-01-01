@@ -13,9 +13,8 @@ const WhoAreWe = () => {
       gsap.from(headerWord.lines, {
         scrollTrigger: {
           trigger: container.current!,
-          start: 'center 80%',
-          end: 'bottom 20%',
-          markers: true
+          start: 'top 70%',
+          end: 'bottom 20%'
         },
         duration: 1,
         y: 50,
