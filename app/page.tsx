@@ -18,6 +18,18 @@ import OurWork from './_sections/OurWork';
 import WhoAreWe from './_sections/WhoAreWe';
 
 const page = () => {
+  // Todo
+  /*
+  1- multi language
+  2- send email to admin by form
+  3- add mobile menu item
+  4- add real email in footer
+  5- add real phone number in footer
+  6- add real address in footer
+  7- add real location in foote
+  8- add real image and real logo
+  9- feedback from amwaj admin and share it in linked in or any social media
+  */
   return (
     <main className='bg-background relative 2xl:container 2xl:mx-auto scroll-smooth '>
       <ScrollLenis>
