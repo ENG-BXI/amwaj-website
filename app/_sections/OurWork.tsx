@@ -58,7 +58,7 @@ const OurWork = () => {
           pin: true
         },
         duration: 2,
-        x: amoutScroll,
+        x: amoutScroll + 200,
         ease: 'linear'
       });
     },
@@ -90,7 +90,7 @@ interface IOurWorkData {
 function OurWorkData({data: {image, listOfData, title}, index}: {data: IOurWorkData; index: number}) {
   return (
     <div className='min-w-300 w-full'>
-      <h3 className={`text-5xl font-bold mb-10 ${index === 0 ? 'mb-6!' : ''}`}>{title}</h3>
+      <h3 className={`text-5xl font-bold mb-10 ${index === 0 ? 'mb-4!' : ''}`}>{title}</h3>
       <div className=''>
         {/* First */}
         <div className='flex justify-between'>
@@ -98,7 +98,7 @@ function OurWorkData({data: {image, listOfData, title}, index}: {data: IOurWorkD
           <ul className='our-values flex flex-col gap-y-2  '>
             {listOfData.map((e, i) => {
               return (
-                <li key={i} data-number={`0${i + 1}`} className={`text-[22px] ${index === 0 ? 'text-[19px]!' : ''}`}>
+                <li key={i} data-number={`0${i + 1}`} className={`text-[22px] w-screen! md:w-full! text-wrap ${index === 0 ? 'smaller text-[18px]!' : ''}`}>
                   {e}
                 </li>
               );

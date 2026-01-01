@@ -140,7 +140,7 @@ section.section {
   @apply container mx-auto mt-15
 }
 
-section .section__title ,section .section__title div{
+section .section__title, section .section__title div {
   @apply my-5 text-[70px] md:text-[150px] text-center text-base/20 md:text-base/36 -tracking-[10px] font-bold bg-linear-to-r bg-clip-text text-transparent from-white/20 to-[#696969]/20
 }
 
@@ -152,4 +152,9 @@ section .section__title ,section .section__title div{
 .our-values li.small::before {
   content: attr(data-number);
   @apply text-[50px]
+}
+
+.our-values li.smaller::before {
+  content: attr(data-number);
+  @apply max-lg:text-[40px] max-lg:text-base/10
 }
