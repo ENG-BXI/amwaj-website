@@ -1,6 +1,32 @@
+'use client';
 import LogoLoop from '@/app/_Components/LogoLoop';
 import Logo from '@/public/Images/Logo.png';
+import {useGSAP} from '@gsap/react';
+import gsap, {ScrollTrigger} from 'gsap/all';
+import {useRef} from 'react';
+
 const OurPartners = () => {
+  const container = useRef<HTMLDivElement>(null);
+  // animate by scroll
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(
+    () => {
+      gsap.from(container.current!.querySelector('h2'), {
+        scrollTrigger: {
+          trigger: container.current!,
+          start: '30% 90%',
+          end: 'bottom 20%'
+        },
+        duration: 1.5,
+        markers: true,
+        y: 50,
+        opacity: 0,
+        stagger: 0.1,
+        ease: 'power3.out'
+      });
+    },
+    {scope: container}
+  );
   const imageLogos = [
     {src: Logo.src, alt: 'Logo', href: 'https://company1.com'},
     {src: Logo.src, alt: 'Logo', href: 'https://company2.com'},
@@ -10,8 +36,8 @@ const OurPartners = () => {
     {src: Logo.src, alt: 'Logo', href: 'https://company3.com'}
   ];
   return (
-    <section id='ourPartners' className='section mb-20'>
-      <h2 className='section__title text-[80px]! text-base/20! md:text-[100px]! md:text-base/30! mb-20!'>
+    <section ref={container} id='ourPartners' className='section mb-20'>
+      <h2 className='section__title text-[80px]! text-base/20! md:text-[100px]! md:text-base/30! mb-20! overflow-hidden!'>
         شركاؤنا في التوريد والتعاون
         <br />
         Our Partners in Supply & Collaboration

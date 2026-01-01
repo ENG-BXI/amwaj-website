@@ -1,7 +1,12 @@
+'use client';
 import Image, {StaticImageData} from 'next/image';
 import OurWork1 from '@/public/Images/our-works-1.png';
 import OurWork2 from '@/public/Images/our-works-2.png';
 import OurWork3 from '@/public/Images/our-works-3.png';
+import {useGSAP} from '@gsap/react';
+import {useRef} from 'react';
+import gsap, {ScrollTrigger} from 'gsap/all';
+import {SplitText} from 'gsap/all';
 const OurWork = () => {
   const listSectionData: IOurWorkData[] = [
     {
@@ -20,15 +25,54 @@ const OurWork = () => {
       listOfData: ['توريد واستيراد المعدات الكهربائية والميكانيكية لمحطات التحويل والمشاريع الصناعية.', 'توريد واستيراد المفاتيح والمحولات والكابلات من الشركات العالمية المعتمدة.', 'توفير قطع الغيار والملحقات الفنية لمشاريع التشغيل والصيانة.']
     }
   ];
+  const container = useRef<HTMLDivElement>(null);
+  // animate by scroll
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(
+    () => {
+      const works = container.current!.querySelector('.works') as HTMLElement;
+      const workswidth = works.scrollWidth;
+      const amoutScroll = workswidth - window.innerWidth;
+      console.log(workswidth, amoutScroll, window.innerWidth);
+
+      const headerWord = SplitText.create(container.current!.querySelector('h2'), {type: 'lines'});
+      gsap.from(headerWord.lines, {
+        scrollTrigger: {
+          trigger: container.current!,
+          start: '30% 90%',
+          end: 'bottom 20%'
+        },
+        duration: 1.5,
+        markers: true,
+        y: 50,
+        opacity: 0,
+        stagger: 0.1,
+        ease: 'power3.out'
+      });
+      gsap.to(container.current!.querySelector('.works'), {
+        scrollTrigger: {
+          trigger: container.current!.querySelector('.works'),
+          start: 'top 15%',
+          end: `+=${amoutScroll}`,
+          scrub: true,
+          pin: true
+        },
+        duration: 2,
+        x: amoutScroll,
+        ease: 'linear'
+      });
+    },
+    {scope: container}
+  );
   return (
-    <section id='ourWork' className='section'>
+    <section ref={container} id='ourWork' className='section overflow-hidden!'>
       <h2 className='section__title mb-20!'>
         اعمالنا <br />
         OUT WORKS
       </h2>
-      <div className='flex gap-x-70 overflow-hidden'>
+      <div className='works flex gap-x-70 '>
         {listSectionData.map((e, i) => {
-          return <OurWorkData key={i} data={e} />;
+          return <OurWorkData key={i} index={i} data={e} />;
         })}
       </div>
     </section>
@@ -43,10 +87,10 @@ interface IOurWorkData {
   listOfData: string[];
 }
 
-function OurWorkData({data: {image, listOfData, title}}: {data: IOurWorkData}) {
+function OurWorkData({data: {image, listOfData, title}, index}: {data: IOurWorkData; index: number}) {
   return (
-    <div className='min-w-300'>
-      <h3 className='text-5xl font-bold mb-10'>{title}</h3>
+    <div className='min-w-300 w-full'>
+      <h3 className={`text-5xl font-bold mb-10 ${index === 0 ? 'mb-6!' : ''}`}>{title}</h3>
       <div className=''>
         {/* First */}
         <div className='flex justify-between'>
@@ -54,7 +98,7 @@ function OurWorkData({data: {image, listOfData, title}}: {data: IOurWorkData}) {
           <ul className='our-values flex flex-col gap-y-2  '>
             {listOfData.map((e, i) => {
               return (
-                <li key={i} data-number={`0${i + 1}`} className='text-[22px]'>
+                <li key={i} data-number={`0${i + 1}`} className={`text-[22px] ${index === 0 ? 'text-[19px]!' : ''}`}>
                   {e}
                 </li>
               );

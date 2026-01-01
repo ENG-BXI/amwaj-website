@@ -1,11 +1,35 @@
+'use client';
 import Image from 'next/image';
 import OurTeamImage from '@/public/Images/OurTeam.png';
-
+import {useGSAP} from '@gsap/react';
+import gsap, {ScrollTrigger} from 'gsap/all';
+import {useRef} from 'react';
 const ImageGallery = () => {
+  const container = useRef<HTMLDivElement>(null);
+  // animate by scroll
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(
+    () => {
+      gsap.from(container.current!.querySelector('h2'), {
+        scrollTrigger: {
+          trigger: container.current!,
+          start: '30% 90%',
+          end: 'bottom 20%'
+        },
+        duration: 1.5,
+        markers: true,
+        y: 50,
+        opacity: 0,
+        stagger: 0.1,
+        ease: 'power3.out'
+      });
+    },
+    {scope: container}
+  );
   const listOfImage = [OurTeamImage, OurTeamImage, OurTeamImage, OurTeamImage, OurTeamImage, OurTeamImage, OurTeamImage, OurTeamImage];
   return (
-    <section id='imageGallery' className='section'>
-      <h2 className='section__title text-[80px]! text-base/20! md:text-[120px]! md:text-base/30! mb-20!'>
+    <section ref={container} id='imageGallery' className='section'>
+      <h2 className='section__title text-[80px]! text-base/20! md:text-[120px]! md:text-base/30! mb-20! overflow-hidden!'>
         معرض الصور <br />
         IMAGE GALLARY
       </h2>

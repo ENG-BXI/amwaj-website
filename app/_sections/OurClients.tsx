@@ -1,12 +1,36 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
 import Logo from '@/public/Images/Logo.png';
-
+import {useGSAP} from '@gsap/react';
+import gsap, {ScrollTrigger} from 'gsap/all';
+import {useRef} from 'react';
 const OurClients = () => {
+  const container = useRef<HTMLDivElement>(null);
+  // animate by scroll
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(
+    () => {
+      gsap.from(container.current!.querySelector('h2'), {
+        scrollTrigger: {
+          trigger: container.current!,
+          start: '30% 90%',
+          end: 'bottom 20%'
+        },
+        duration: 1.5,
+        markers: true,
+        y: 50,
+        opacity: 0,
+        stagger: 0.1,
+        ease: 'power3.out'
+      });
+    },
+    {scope: container}
+  );
   const listOfLogo = [Logo, Logo, Logo, Logo, Logo, Logo, Logo, Logo, Logo, Logo, Logo, Logo, Logo, Logo, Logo];
   return (
-    <section id='ourClients' className='section'>
-      <h2 className='section__title '>عملاؤنا Our Clients</h2>
+    <section ref={container} id='ourClients' className='section'>
+      <h2 className='section__title overflow-hidden!'>عملاؤنا Our Clients</h2>
       <div className='flex flex-wrap justify-center items-center gap-5 md:gap-10 my-20! px-5'>
         {listOfLogo.map((e, i) => {
           return <Image key={i} src={e} alt={e.src} />;

@@ -1,9 +1,49 @@
-import React from 'react';
+'use client';
+import React, {useRef} from 'react';
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {useGSAP} from '@gsap/react';
 
 const ContactUs = () => {
+  const container = useRef<HTMLDivElement>(null);
+  // animate by scroll
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current!,
+          start: '30% 90%',
+          end: 'bottom 20%'
+        }
+      });
+      tl.from(container.current!.querySelector('h2'), {
+        duration: 1,
+        markers: true,
+        y: 50,
+        opacity: 0,
+        stagger: 0.1,
+        ease: 'power3.out'
+      });
+      // animation paragraph by tl
+      tl.from(
+        container.current!.querySelector('p'),
+        {
+          duration: 1,
+          markers: true,
+          y: 50,
+          opacity: 0,
+          stagger: 0.1,
+          ease: 'power3.out'
+        },
+        '-=0.8'
+      );
+    },
+    {scope: container}
+  );
   return (
-    <section id='contactUs' className='section px-5'>
-      <h2 className='section__title text-[80px]! md:text-[120px]!'>تواصل معنا CONTACT US</h2>
+    <section ref={container} id='contactUs' className='section px-5'>
+      <h2 className='section__title text-[80px]! md:text-[120px]! overflow-hidden!'>تواصل معنا CONTACT US</h2>
       <p className='text-secondary font-bold  text-center mb-10'>ابدأ خطوتك الأولى نحو مشروع ناجح—تواصل معنا اليوم.</p>
       <form className=' mx-auto py-5 px-5 md:px-20 max-w-300 flex flex-col justify-center items-center bg-[#204C4C]/40 border-2 border-secondary rounded-4xl' action=''>
         <div className='flex flex-col md:flex-row w-full gap-x-10 mb-7'>
