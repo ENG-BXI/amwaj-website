@@ -7,24 +7,22 @@ import {useGSAP} from '@gsap/react';
 import {useRef} from 'react';
 import gsap, {ScrollTrigger} from 'gsap/all';
 import {SplitText} from 'gsap/all';
+import {useLocale, useTranslations} from 'next-intl';
+
 const OurWork = () => {
-  const listSectionData: IOurWorkData[] = [
-    {
-      title: 'اعمالنا الكهربائية',
-      image: OurWork1,
-      listOfData: ['إنشاء وتركيب محطات التحويل الكهربائية (11/33 ك.ف وما فوق) بما في ذلك المحولات والمفاتيح الكهربائية وأنظمة الحماية والتحكم.', 'إنشاء وتركيب محطات التحويل الكهربائية (11/33 ك.ف وما فوق) بما في ذلك المحولات والمفاتيح الكهربائية وأنظمة الحماية والتحكم.', 'أعمال التشغيل والفحص (Testing & Commissioning) لمعدات المحطات الكهربائية.', 'تصميم وتنفيذ أنظمة التحكم والمراقبة (SCADA & PLC Systems)', 'أعمال الإنارة الداخلية والخارجية للمباني والمنشآت الصناعية.']
-    },
-    {
-      title: 'اعمالنا الميكانيكية',
-      image: OurWork2,
-      listOfData: ['تنفيذ أنظمة التبريد والتهوية والتكييف (HVAC) للمحطات والمباني', 'تنفيذ شبكات المياه والصرف الصناعي', 'توريد وتركيب أنظمة مكافحة الحريق والإطفاء الآلي.', 'توريد وتركيب المولدات والمضخات والمعدات الميكانيكية للمحطات والمباني.']
-    },
-    {
-      image: OurWork3,
-      title: 'التجارة العامة',
-      listOfData: ['توريد واستيراد المعدات الكهربائية والميكانيكية لمحطات التحويل والمشاريع الصناعية.', 'توريد واستيراد المفاتيح والمحولات والكابلات من الشركات العالمية المعتمدة.', 'توفير قطع الغيار والملحقات الفنية لمشاريع التشغيل والصيانة.']
-    }
-  ];
+  const t = useTranslations('OurWork');
+  const lang = useLocale();
+  const isAr = lang === 'ar';
+  // Fetch sections from i18n file dynamically
+  const sectionsData = t.raw('sections') as {title: string; items: string[]}[];
+  const images = [OurWork1, OurWork2, OurWork3];
+
+  const listSectionData: IOurWorkData[] = sectionsData.map((section, index) => ({
+    title: section.title,
+    image: images[index] || OurWork1, // Fallback image if more sections added than images
+    listOfData: section.items
+  }));
+
   const container = useRef<HTMLDivElement>(null);
   // animate by scroll
   gsap.registerPlugin(ScrollTrigger);
@@ -57,7 +55,7 @@ const OurWork = () => {
           pin: true
         },
         duration: 2,
-        x: amoutScroll + 200,
+        x: isAr ? amoutScroll + 200 : -amoutScroll + 200,
         ease: 'linear'
       });
     },
@@ -66,8 +64,8 @@ const OurWork = () => {
   return (
     <section ref={container} id='ourWork' className='section overflow-hidden!'>
       <h2 className='section__title mb-20!'>
-        اعمالنا <br />
-        OUT WORKS
+        أعمالنا <br />
+        OUR WORKS
       </h2>
       <div className='works flex gap-x-70 '>
         {listSectionData.map((e, i) => {

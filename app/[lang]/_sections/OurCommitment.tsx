@@ -4,7 +4,10 @@ import OurCommitmentImage from '@/public/Images/OurCommitment.png';
 import {useGSAP} from '@gsap/react';
 import gsap, {ScrollTrigger} from 'gsap/all';
 import {useRef} from 'react';
+import {useTranslations} from 'next-intl';
+
 const OurCommitment = () => {
+  const t = useTranslations('OurCommitment');
   const container = useRef<HTMLDivElement>(null);
   // animate by scroll
   gsap.registerPlugin(ScrollTrigger);
@@ -33,8 +36,8 @@ const OurCommitment = () => {
           <Image className='w-full h-full object-cover' src={OurCommitmentImage} alt='OurCommitment Image' />
         </div>
         <div className='lg:w-1/2 order-1 lg:order-2'>
-          <h3 className='text-3xl text-center lg:text-start text-secondary font-bold mb-5 lg:mb-15'>التزامنا… أساس نجاح مشاريعكم</h3>
-          <p className='text-center lg:text-start'>نلتزم في شركة أمواج الدولية للتجارة والمقاولات المحدودة بتقديم حلول هندسية متكاملة تلبي احتياجات عملائنا بدقة وكفاءة.نسعى لأن نكون الخيار الأول في تنفيذ مشاريع الطاقة والبنية التحتية وأن نواصل الإسهام في بناء مستقبل يعتمد على الطاقة الآمنة والمستدامة</p>
+          <h3 className='text-3xl text-center lg:text-start text-secondary font-bold mb-5 lg:mb-15'>{t('title')}</h3>
+          <p className='text-center lg:text-start'>{t('description')}</p>
         </div>
       </div>
     </section>

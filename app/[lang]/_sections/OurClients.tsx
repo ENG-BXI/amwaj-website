@@ -5,7 +5,10 @@ import Logo from '@/public/Images/Logo.png';
 import {useGSAP} from '@gsap/react';
 import gsap, {ScrollTrigger} from 'gsap/all';
 import {useRef} from 'react';
+import {useTranslations} from 'next-intl';
+
 const OurClients = () => {
+  const t = useTranslations('OurClients');
   const container = useRef<HTMLDivElement>(null);
   // animate by scroll
   gsap.registerPlugin(ScrollTrigger);
@@ -14,7 +17,7 @@ const OurClients = () => {
       gsap.from(container.current!.querySelector('h2'), {
         scrollTrigger: {
           trigger: container.current!,
-       start: 'top 70%',
+          start: 'top 70%',
           end: 'bottom 20%'
         },
         duration: 1.5,
@@ -36,7 +39,7 @@ const OurClients = () => {
         })}
       </div>
       <div className='w-full min-h-70 bg-linear-to-l from-[#091616] vie-[#0F1F1F] to-[#204C4C]/50  flex justify-center items-center py-5 px-5 md:px-30 rounded-xl '>
-        <p className='text-center'>نعتز في شركة أمواج الدولية للتجارة والمقاولات المحدودة بأننا أصبحنا الشريك الموثوق لعدد من الجهات المرموقة في القطاعين الحكومي والخاص، وذلك بفضل ما نقدمه من حلول متكاملة، وجودة عالية، والتزام صارم بمعايير السلامة والموثوقية في مختلف مشاريعنا.</p>{' '}
+        <p className='text-center'>{t('description')}</p>
       </div>
     </section>
   );

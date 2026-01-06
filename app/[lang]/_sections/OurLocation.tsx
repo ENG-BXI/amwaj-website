@@ -2,6 +2,7 @@
 import {useGSAP} from '@gsap/react';
 import gsap, {ScrollTrigger} from 'gsap/all';
 import {useRef} from 'react';
+
 const OurLocation = () => {
   const container = useRef<HTMLDivElement>(null);
   // animate by scroll
@@ -11,7 +12,7 @@ const OurLocation = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container.current!,
-  start: 'top 70%',
+          start: 'top 70%',
           end: 'bottom 20%'
         }
       });

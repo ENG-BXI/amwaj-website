@@ -4,27 +4,11 @@ import Image from 'next/image';
 import {Phone, Mail, Mailbox} from 'lucide-react';
 import Link from 'next/link';
 
+import {useTranslations} from 'next-intl';
+
 const Footer = () => {
-  const navLinks = [
-    {label: 'الرئيسية', href: '#hero'},
-    {label: 'من نحن', href: '#whoAreWe'},
-    {label: 'فلسفتنا', href: '#ourPhilosophy'},
-    {label: 'اعمالنا', href: '#ourWork'}
-  ];
-
-  const navLinks2 = [
-    {label: 'خبراتنا', href: '#ourExperience'},
-    {label: 'فريق العمل', href: '#ourTeam'},
-    {label: 'التزامنا', href: '#ourCommitment'},
-    {label: 'شركائنا', href: '#ourPartners'}
-  ];
-
-  const navLinks3 = [
-    {label: 'عملائنا', href: '#ourClients'},
-    {label: 'مشاريعنا', href: '#ourProject'},
-    {label: 'معرض الصور', href: '#imageGallery'},
-    {label: 'تواصل معنا', href: '#contactUs'}
-  ];
+  const t = useTranslations('Footer');
+  const columns = t.raw('columns') as {title: string; links: {label: string; href: string}[]}[];
 
   const contactInfo = [
     {icon: <Mailbox className='text-primary w-5 h-5' />, text: 'P.O. Box: 8347'},
@@ -46,39 +30,21 @@ const Footer = () => {
 
           {/* Content Grid */}
           <div className='flex-1 w-full grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8'>
-            {/* Links Column 1 */}
-            <div className='flex flex-col gap-3 text-start'>
-              <h4 className='text-xl md:text-2xl font-bold text-white mb-2'>الوصول السريع</h4>
-              {navLinks.map((link, index) => (
-                <Link key={index} href={link.href} className='text-lg md:text-xl text-white/80 hover:text-primary transition-colors font-light'>
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-
-            {/* Links Column 2 */}
-            <div className='flex flex-col gap-3 text-start'>
-              <h4 className='text-xl md:text-2xl font-bold text-white mb-2'>عن أمواج</h4>
-              {navLinks2.map((link, index) => (
-                <Link key={index} href={link.href} className='text-lg md:text-xl text-white/80 hover:text-primary transition-colors font-light'>
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-
-            {/* Links Column 3 */}
-            <div className='flex flex-col gap-3 text-start'>
-              <h4 className='text-xl md:text-2xl font-bold text-white mb-2'>معلوماتنا</h4>
-              {navLinks3.map((link, index) => (
-                <Link key={index} href={link.href} className='text-lg md:text-xl text-white/80 hover:text-primary transition-colors font-light'>
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+            {/* Dynamic Link Columns */}
+            {columns.map((column, colIndex) => (
+              <div key={colIndex} className='flex flex-col gap-3 text-start'>
+                <h4 className='text-xl md:text-2xl font-bold text-white mb-2'>{column.title}</h4>
+                {column.links.map((link, linkIndex) => (
+                  <Link key={linkIndex} href={link.href} className='text-lg md:text-xl text-white/80 hover:text-primary transition-colors font-light'>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            ))}
 
             {/* Contact Info Column */}
             <div className='flex flex-col gap-5 text-start col-span-2 sm:col-span-1'>
-              <h4 className='text-xl md:text-2xl font-bold text-white mb-2'>تواصل معنا</h4>
+              <h4 className='text-xl md:text-2xl font-bold text-white mb-2'>{t('contactTitle')}</h4>
               <div className='flex flex-col gap-4'>
                 {contactInfo.map((item, index) => {
                   let href = '#';

@@ -5,7 +5,10 @@ import gsap, {SplitText} from 'gsap/all';
 import Image from 'next/image';
 import {useRef} from 'react';
 
+import {useTranslations} from 'next-intl';
+
 const Hero = () => {
+  const t = useTranslations('Hero');
   gsap.registerPlugin(useGSAP);
 
   const container = useRef<HTMLDivElement>(null);
@@ -24,8 +27,8 @@ const Hero = () => {
       </div>
       <div className='flex w-full h-full items-center justify-center relative'>
         <h1 className='text-white overflow-hidden z-10 -translate-y-10 text-center text-5xl md:text-7xl font-bold'>
-          امواج الدولية
-          <br /> للتجارة والمقاولات المحدودة
+          {t('title1')}
+          <br /> {t('title2')}
         </h1>
         {/* Background Blur */}
         <div className='absolute bg-primary/50 rounded-full blur-2xl h-60 w-full -translate-[50%] top-[50%] left-[50%]  '></div>

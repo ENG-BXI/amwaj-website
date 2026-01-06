@@ -1,0 +1,180 @@
+{
+  "HomePage": {
+    "title": "Hello world!"
+  },
+  "NavBar": {
+    "whoAreWe": "Who We Are",
+    "philosophy": "Our Philosophy",
+    "ourWork": "Our Work",
+    "projects": "Our Projects",
+    "team": "Our Team",
+    "clients": "Our Clients",
+    "contactUs": "Contact Us"
+  },
+  "Hero": {
+    "title1": "Amwaj International",
+    "title2": "Trading & Contracting Co. Ltd."
+  },
+  "WhoAreWe": {
+    "description": "Amwaj International Trading and Contracting Co. Ltd. is one of the leading national companies in the field of executing electrical and mechanical projects and general trade. It possesses extensive experience in designing, executing, and maintaining high, medium, and low voltage electrical transformation stations. Since its establishment, the company has been committed to excellence and quality through qualified engineering cadres and partnerships with leading international manufacturers and consultants to provide integrated solutions that meet the requirements of modern energy and infrastructure projects."
+  },
+  "OurPhilosophy": {
+    "vision": "OUR VISION",
+    "visionDescription": "To be among the leading companies in providing integrated engineering solutions in the fields of energy and electrical projects, and contributing to the development of modern infrastructure with efficiency and sustainability.",
+    "mission": "OUR MISSION",
+    "missionDescription": "Providing high-quality engineering and technical services in the fields of electrical stations, through a specialized team committed to the highest standards of quality, safety, and innovation to achieve the satisfaction of customers and partners.",
+    "values": "OUR VALUES",
+    "value1": "Quality and Excellence",
+    "value2": "Commitment and Credibility",
+    "value3": "Safety First",
+    "value4": "Continuous Development",
+    "value5": "Long-term Partnership"
+  },
+  "OurWork": {
+    "header": "OUR WORK",
+    "sections": [
+      {
+        "title": "Electrical Works",
+        "items": [
+          "Construction and installation of electrical transformation stations (11/33 kV and above) including transformers, switchgears, protection and control systems.",
+          "Testing & Commissioning of electrical station equipment.",
+          "Design and implementation of SCADA & PLC Systems.",
+          "Internal and external lighting for buildings and industrial facilities."
+        ]
+      },
+      {
+        "title": "Mechanical Works",
+        "items": [
+          "Implementation of HVAC systems for stations and buildings.",
+          "Implementation of water and industrial drainage networks.",
+          "Supply and installation of fire fighting and automatic extinguishing systems.",
+          "Supply and installation of generators, pumps, and mechanical equipment for stations and buildings."
+        ]
+      },
+      {
+        "title": "General Trade",
+        "items": [
+          "Supply and import of electrical and mechanical equipment for transformation stations and industrial projects.",
+          "Supply and import of switchgears, transformers, and cables from approved international companies.",
+          "Provision of spare parts and technical accessories for operation and maintenance projects."
+        ]
+      }
+    ]
+  },
+  "OurExperience": {
+    "title": "Firm Experience in Executing Energy and Electrical Station Projects",
+    "description": "The company has executed numerous projects in the field of electrical transformation stations and energy and distribution projects in cooperation with government bodies, institutions, and international companies. Its work has been characterized by precision in execution, commitment to schedules, and the application of the highest quality and safety standards."
+  },
+  "OurTeam": {
+    "title": "An engineering team with advanced experience ensures reliable project execution from start to delivery",
+    "description": "Our team includes a group of elite engineers specializing in high and medium voltage systems and qualified technicians with extensive experience in installation, testing, and operation, under engineering management with a professional vision that ensures project success from design to final delivery."
+  },
+  "OurCommitment": {
+    "title": "Our Commitment… The Foundation of Your Project's Success",
+    "description": "At Amwaj International Trading and Contracting Co. Ltd., we are committed to providing integrated engineering solutions that meet our clients' needs with precision and efficiency. We strive to be the first choice in executing energy and infrastructure projects and to continue contributing to building a future that relies on safe and sustainable energy."
+  },
+  "OurPartners": {
+    "description": "At Amwaj International Trading and Contracting Co. Ltd., we are committed to building strategic relationships with leading international and regional companies in the fields of electricity, mechanics, and general trade. Our collaboration with these companies aims to ensure high quality in products and services provided for our projects, and commitment to international standards in everything we do."
+  },
+  "OurClients": {
+    "description": "At Amwaj International Trading and Contracting Co. Ltd., we take pride in becoming the trusted partner for a number of prestigious entities in both the government and private sectors. This is thanks to the integrated solutions, high quality, and strict commitment to safety and reliability standards we provide in our various projects."
+  },
+  "OurProject": {
+    "description": "Amwaj International Trading and Contracting Co. Ltd. offers a wide range of electrical and mechanical projects with full commitment to quality and international standards.",
+    "items": [
+      "Construction and installation of electrical transformation stations (11/33 kV and above) including transformers, switchgears, and protection and control systems.",
+      "Supply and installation of 11/33 kV transformation stations.",
+      "Supply, installation, and maintenance of power generation stations.",
+      "Supply, installation, and maintenance of control systems in power generation stations.",
+      "Over Head Line projects, supply and execution.",
+      "Electrical supply works.",
+      "Electrical and mechanical infrastructure works."
+    ]
+  },
+  "ContactUs": {
+    "description": "Take your first step towards a successful project—contact us today.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your full name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "detailsLabel": "Details",
+    "detailsPlaceholder": "Enter your project details",
+    "submit": "Send"
+  },
+  "FooterCompanyName": {
+    "name1": "Amwaj International Trading",
+    "name2": "& Contracting Co. Ltd."
+  },
+  "Footer": {
+    "columns": [
+      {
+        "title": "Quick Access",
+        "links": [
+          {
+            "label": "Home",
+            "href": "#hero"
+          },
+          {
+            "label": "Who We Are",
+            "href": "#whoAreWe"
+          },
+          {
+            "label": "Our Philosophy",
+            "href": "#ourPhilosophy"
+          },
+          {
+            "label": "Our Work",
+            "href": "#ourWork"
+          }
+        ]
+      },
+      {
+        "title": "About Amwaj",
+        "links": [
+          {
+            "label": "Our Experience",
+            "href": "#ourExperience"
+          },
+          {
+            "label": "Our Team",
+            "href": "#ourTeam"
+          },
+          {
+            "label": "Our Commitment",
+            "href": "#ourCommitment"
+          },
+          {
+            "label": "Our Partners",
+            "href": "#ourPartners"
+          }
+        ]
+      },
+      {
+        "title": "Information",
+        "links": [
+          {
+            "label": "Our Clients",
+            "href": "#ourClients"
+          },
+          {
+            "label": "Our Projects",
+            "href": "#ourProject"
+          },
+          {
+            "label": "Image Gallery",
+            "href": "#imageGallery"
+          },
+          {
+            "label": "Contact Us",
+            "href": "#contactUs"
+          }
+        ]
+      }
+    ],
+    "contactTitle": "Contact Us"
+  },
+  "CopyRight": {
+    "text": "© 2025 Amwaj International Trading & Contracting Co. Ltd. All rights reserved.",
+    "developedBy": "Designed & Developed by"
+  }
+}
