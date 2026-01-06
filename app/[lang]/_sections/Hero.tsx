@@ -14,8 +14,19 @@ const Hero = () => {
   const container = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      const headerWord = SplitText.create(container.current!.querySelector('h1'), {type: 'lines'});
-      gsap.from(headerWord.lines, {duration: 0.6, y: 20, opacity: 0, stagger: {each: 0.1, ease: 'power4.out'}, delay: 1.2});
+      const startAnim = () => {
+        const headerWord = SplitText.create(container.current!.querySelector('h1'), {type: 'lines'});
+        gsap.from(headerWord.lines, {
+          duration: 0.6,
+          y: 20,
+          opacity: 0,
+          stagger: {each: 0.1, ease: 'power4.out'},
+          delay: 0.4 // Small delay for the curtain to open enough to see the text
+        });
+      };
+
+      window.addEventListener('loaderFinished', startAnim);
+      return () => window.removeEventListener('loaderFinished', startAnim);
     },
     {scope: container}
   );
@@ -23,7 +34,7 @@ const Hero = () => {
     <section ref={container} id='hero' className='w-full h-full max-2xl:h-screen 2xl:aspect-video overflow-hidden relative'>
       {/* Hero Image */}
       <div className='h-full w-full top-0 left-0 absolute'>
-        <Image src={heroImage} alt='heroImage' width={1000} height={1000} className='object-cover w-full h-full' />
+        <Image src={heroImage} alt='أمواج الدولية للتجارة والمقاولات - Amwaj International Trading and Contracting' width={1920} height={1080} className='object-cover w-full h-full' priority />
       </div>
       <div className='flex w-full h-full items-center justify-center relative'>
         <h1 className='text-white overflow-hidden z-10 -translate-y-10 text-center text-5xl md:text-7xl font-bold'>

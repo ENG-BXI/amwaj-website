@@ -16,6 +16,7 @@ import OurProject from './_sections/OurProject';
 import OurTeam from './_sections/OurTeam';
 import OurWork from './_sections/OurWork';
 import WhoAreWe from './_sections/WhoAreWe';
+import BackToTop from './_Components/BackToTop';
 
 const page = () => {
   // Todo
@@ -50,6 +51,7 @@ const page = () => {
         <FooterCompanyName />
         <Footer />
         <CopyRight />
+        <BackToTop />
       </ScrollLenis>
     </main>
   );

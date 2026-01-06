@@ -25,10 +25,15 @@ function NavBar() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline();
-      tl.from(container.current, {duration: 1, width: 0, opacity: 0, clearProps: 'width,opacity'});
-      tl.from(container.current!.querySelectorAll('.nav-items a'), {duration: 1, y: -20, opacity: 0, stagger: 0.1}, '-=0.5');
-      tl.from(container.current!.querySelector('.logo-img'), {duration: 0.7, y: -20, opacity: 0, clearProps: 'y,opacity'}, '-=0.5');
+      const startAnim = () => {
+        const tl = gsap.timeline();
+        tl.from(container.current, {duration: 1, width: 0, opacity: 0, clearProps: 'width,opacity'});
+        tl.from(container.current!.querySelectorAll('.nav-items a'), {duration: 1, y: -20, opacity: 0, stagger: 0.1}, '-=0.5');
+        tl.from(container.current!.querySelector('.logo-img'), {duration: 0.7, y: -20, opacity: 0, clearProps: 'y,opacity'}, '-=0.5');
+      };
+
+      window.addEventListener('loaderFinished', startAnim);
+      return () => window.removeEventListener('loaderFinished', startAnim);
     },
     {scope: container}
   );

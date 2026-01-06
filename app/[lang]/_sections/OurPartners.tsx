@@ -30,12 +30,12 @@ const OurPartners = () => {
     {scope: container}
   );
   const imageLogos = [
-    {src: Logo.src, alt: 'Logo', href: 'https://company1.com'},
-    {src: Logo.src, alt: 'Logo', href: 'https://company2.com'},
-    {src: Logo.src, alt: 'Logo', href: 'https://company2.com'},
-    {src: Logo.src, alt: 'Logo', href: 'https://company2.com'},
-    {src: Logo.src, alt: 'Logo', href: 'https://company2.com'},
-    {src: Logo.src, alt: 'Logo', href: 'https://company3.com'}
+    {src: Logo.src, alt: 'Partner Logo - Amwaj', href: '#'},
+    {src: Logo.src, alt: 'Technology Partner - Amwaj', href: '#'},
+    {src: Logo.src, alt: 'Supply Chain Partner - Amwaj', href: '#'},
+    {src: Logo.src, alt: 'Engineering Consultant - Amwaj', href: '#'},
+    {src: Logo.src, alt: 'Strategic Partner - Amwaj', href: '#'},
+    {src: Logo.src, alt: 'Collaboration Partner - Amwaj', href: '#'}
   ];
   return (
     <section ref={container} id='ourPartners' className='section mb-20'>

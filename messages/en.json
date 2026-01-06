@@ -1,7 +1,4 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
-  },
   "NavBar": {
     "whoAreWe": "Who We Are",
     "philosophy": "Our Philosophy",
@@ -99,7 +96,9 @@
     "emailPlaceholder": "Enter your email address",
     "detailsLabel": "Details",
     "detailsPlaceholder": "Enter your project details",
-    "submit": "Send"
+    "submit": "Send",
+    "success": "Your message has been sent successfully! Thank you for contacting us.",
+    "error": "Something went wrong, please try again later."
   },
   "FooterCompanyName": {
     "name1": "Amwaj International Trading",
@@ -176,5 +175,15 @@
   "CopyRight": {
     "text": "© 2025 Amwaj International Trading & Contracting Co. Ltd. All rights reserved.",
     "developedBy": "Designed & Developed by"
+  },
+  "Metadata": {
+    "title": "Amwaj International Trading & Contracting Co. Ltd. | Power & Infrastructure Solutions",
+    "description": "A leading national company in electrical and mechanical projects and general trade. Specializing in transformation stations, high, medium, and low voltage, and energy control systems in Yemen.",
+    "keywords": "electrical contracting, transformation stations, energy, infrastructure, Yemen, Hadramout, Mukalla, Amwaj International, mechanical engineering, general trade"
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Home"
   }
 }

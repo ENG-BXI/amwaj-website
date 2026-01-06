@@ -61,7 +61,7 @@ const OurPhilosophy = () => {
       {/* رؤيتنا */}
       <div id='view' className={`flex flex-col ${isAr ? 'md:flex-row' : 'lg:flex-row'} gap-x-10`}>
         <div className={`w-full ${isAr ? 'md:max-w-120' : 'lg:max-w-120'} h-90 overflow-hidden rounded-4xl`}>
-          <Image className='h-full w-full object-cover' src={heroImage} alt='Our View Image' />
+          <Image className='h-full w-full object-cover' src={heroImage} alt={t('vision')} />
         </div>
         <div className='flex-1 flex flex-col '>
           <h3 className={`section__title text-base/25! overflow-hidden ${isAr ? 'text-[80px]! md:text-[150px]! md:text-base/50! md:text-start!' : 'text-[80px]! lg:text-[100px]! lg:text-base/50! lg:text-start! text-nowrap'}`}>{t('vision')}</h3>
@@ -75,13 +75,13 @@ const OurPhilosophy = () => {
           <p className={`text-[18px] text-center ${isAr ? 'md:text-start' : 'lg:text-start'}`}>{t('missionDescription')}</p>
         </div>
         <div className={`w-full ${isAr ? 'md:max-w-120' : 'lg:max-w-120'} h-90 overflow-hidden rounded-4xl order-1 ${isAr ? 'md:order-2' : 'lg:order-2'}`}>
-          <Image className='h-full w-full object-cover' src={heroImage} alt='Our View Image' />
+          <Image className='h-full w-full object-cover' src={heroImage} alt={t('mission')} />
         </div>
       </div>
       {/* قيمنا */}
       <div id='values' className={`flex flex-col ${isAr ? 'md:flex-row' : 'lg:flex-row'} gap-x-10`}>
         <div className={`w-full ${isAr ? 'md:max-w-120' : 'lg:max-w-120'} h-90 overflow-hidden rounded-4xl`}>
-          <Image className='h-full w-full object-cover' src={heroImage} alt='Our View Image' />
+          <Image className='h-full w-full object-cover' src={heroImage} alt={t('values')} />
         </div>
         <div className='flex-1 flex flex-col'>
           <h3 className={`section__title text-base/25! overflow-hidden ${isAr ? 'text-[80px]! md:text-[130px]! md:text-base/50! md:text-start!' : 'text-[80px]! lg:text-[100px]! lg:text-base/50! lg:text-start! text-nowrap'}`}>{t('values')}</h3>
